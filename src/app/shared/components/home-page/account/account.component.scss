@@ -1,0 +1,27 @@
+// .account {
+//   background: darkcyan;
+//   border-radius: 10px;
+//   padding: 1em;
+//   box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+//   max-width: calc(128px + 2em);
+
+//   canvas {
+//     margin-bottom: 0.75em;
+//   }
+
+//   .account__title {
+//     text-align: center;
+//     font-weight: bold;
+//     font-size: 1.25em;
+//   }
+// }
+
+.card {
+  // max-width: ;
+  height: calc(100% - 1.5em);
+  margin-bottom: 1.5em;
+
+  .card-body {
+    margin: 0 auto;
+  }
+}

@@ -49,25 +49,4 @@ export class HomeViewComponent implements OnInit {
       console.log('getBalance()', error);
     }
   }
-
-  async transfer() {
-    try {
-      if (!this.toAddress) {
-        console.log('You need to add address');
-        return;
-      } else if (!this._bcService.isAddress(this.toAddress)) {
-        console.log('No valid address');
-        return;
-      }
-
-      this.isLoading = true;
-      const response = await this._bcService
-        .transfer(this.me, this.toAddress, this.amount)
-        .toPromise();
-
-      await this.getBalance(this.me);
-      console.log(response);
-      this.isLoading = false;
-    } catch (error) {}
-  }
 }

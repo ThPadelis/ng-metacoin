@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeViewComponent } from './home-view.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AccountModule } from 'src/app/shared/components';
 
 const routes: Routes = [
   {
@@ -11,8 +12,15 @@ const routes: Routes = [
   },
 ];
 
+const Components: any[] = [AccountModule];
+
 @NgModule({
-  imports: [CommonModule, FormsModule, RouterModule.forChild(routes)],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule.forChild(routes),
+    ...Components,
+  ],
   declarations: [HomeViewComponent],
   exports: [HomeViewComponent],
 })

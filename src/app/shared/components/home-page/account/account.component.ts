@@ -29,23 +29,21 @@ export class AccountComponent implements OnInit, AfterViewInit {
 
   private async drawQRCode(text: string) {
     if (this.canvas) {
-      // try {
-      //   await qr.toCanvas(this.canvas.nativeElement, text);
-      // } catch (error) {
-      //   console.log('Failed to draw QRCode');
-      //   console.log(error);
-      // }
+      const opts: qr.QRCodeToDataURLOptions = {
+        errorCorrectionLevel: 'H',
+        type: 'image/jpeg',
+        margin: 1,
+        width: 200,
+        rendererOpts: {
+          quality: 1,
+        },
+      };
+      try {
+        await qr.toDataURL(this.canvas.nativeElement, text, opts);
+      } catch (error) {
+        console.log('Something went wrong');
+        console.log(error);
+      }
     }
-
-    const opts: qr.QRCodeToDataURLOptions = {
-      errorCorrectionLevel: 'H',
-      type: 'image/jpeg',
-      margin: 1,
-      width: 200,
-      rendererOpts: {
-        quality: 1,
-      },
-    };
-    await qr.toDataURL(this.canvas.nativeElement, text, opts);
   }
 }

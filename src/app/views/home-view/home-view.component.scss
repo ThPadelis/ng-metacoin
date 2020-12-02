@@ -1,0 +1,9 @@
+.navbar-nav {
+  .nav-item {
+    .nav-link {
+      &.fix-tooltip {
+        left: -200px;
+      }
+    }
+  }
+}

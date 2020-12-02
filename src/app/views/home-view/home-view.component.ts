@@ -35,7 +35,7 @@ export class HomeViewComponent implements OnInit {
     try {
       const { accounts } = await this._bcService.getAccounts().toPromise();
       this._bcService.me = accounts[0];
-      this.accounts = accounts;
+      this.accounts = accounts.slice(1);
     } catch (error) {
       console.log('getAccounts()', error);
     }

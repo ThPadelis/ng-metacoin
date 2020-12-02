@@ -1,0 +1,41 @@
+.navbar-nav {
+  .nav-item {
+    .btn-link {
+      &:hover,
+      &:focus {
+        text-decoration: none;
+        color: #000000;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.label {
+  position: relative;
+  background: black;
+  padding: 0.5em;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  border-radius: 5px;
+  margin: 1em 0.4em 0;
+
+  .arrow {
+    position: absolute;
+    background: black;
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(45deg);
+    border-radius: 5px 0 0 0;
+  }
+}
+
+.modal-dialog {
+  .modal-content {
+    border: none;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  }
+}

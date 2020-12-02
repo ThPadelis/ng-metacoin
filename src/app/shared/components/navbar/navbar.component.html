@@ -1,6 +1,8 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm mb-3"
+>
   <a class="navbar-brand" routerLink="/">NGMetaCoin</a>
-  <!-- <button
+  <button
     class="navbar-toggler"
     type="button"
     data-toggle="collapse"
@@ -10,13 +12,36 @@
     aria-label="Toggle navigation"
   >
     <span class="navbar-toggler-icon"></span>
-  </button> -->
+  </button>
 
-  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active">
-        <a class="nav-link" routerLink="/">Home</a>
+      <li class="nav-item">
+        <button class="btn btn-link navbar-text" (click)="openModal(template)">
+          My Account
+        </button>
       </li>
     </ul>
-  </div> -->
+  </div>
 </nav>
+
+<ng-template #template>
+  <!-- <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button
+      type="button"
+      class="close pull-right"
+      aria-label="Close"
+      (click)="modalRef.hide()"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div> -->
+  <div class="modal-body mx-auto">
+    <img [src]="qrcodeURL" alt="QRCode" />
+    <div class="label">
+      <div class="arrow"></div>
+      Account 1
+    </div>
+  </div>
+</ng-template>
